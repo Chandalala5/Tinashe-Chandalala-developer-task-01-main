@@ -72,7 +72,7 @@ public class MobileNumberUtils {
 
     public static void main(String[] args) {
         try {
-            LOGGER.info(">>>>> 1. Result : "+formatMobileNumber("785898366"));
+            LOGGER.info(">>>>> 1. Result  : "+formatMobileNumber("785898366"));
             LOGGER.info(">>>>> 2. Result : "+formatMobileNumber("0785898366"));
             LOGGER.info(">>>>> 3. Result : "+formatMobileNumber("00263785898366"));
             LOGGER.info(">>>>> 4. Result : "+formatMobileNumber("+263785898366"));
