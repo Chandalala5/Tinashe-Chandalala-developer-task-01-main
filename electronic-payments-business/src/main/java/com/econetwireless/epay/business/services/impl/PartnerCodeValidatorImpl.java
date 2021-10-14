@@ -10,10 +10,9 @@ import com.econetwireless.utils.execeptions.EpayException;
  */
 public class PartnerCodeValidatorImpl implements PartnerCodeValidator{
 
-    private RequestPartnerDao requestPartnerDao;
+    private final RequestPartnerDao requestPartnerDao;
 
     public PartnerCodeValidatorImpl(RequestPartnerDao requestPartnerDao) {
-        this(super);
         this.requestPartnerDao = requestPartnerDao;
     }
 
