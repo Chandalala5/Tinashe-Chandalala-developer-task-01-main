@@ -25,6 +25,9 @@ public class CreditsServiceImpl implements CreditsService{
     private ChargingPlatform chargingPlatform;
     private SubscriberRequestDao subscriberRequestDao;
 
+    public CreditsServiceImpl() {
+    }
+
     public CreditsServiceImpl(ChargingPlatform chargingPlatform, SubscriberRequestDao subscriberRequestDao) {
         this.chargingPlatform = chargingPlatform;
         this.subscriberRequestDao = subscriberRequestDao;

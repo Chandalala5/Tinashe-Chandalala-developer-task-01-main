@@ -9,6 +9,16 @@ public class CreditRequest {
     private double amount;
     private String referenceNumber;
 
+    public CreditRequest() {
+    }
+
+    public CreditRequest(String partnerCode, String msisdn, double amount, String referenceNumber) {
+        this.partnerCode = partnerCode;
+        this.msisdn = msisdn;
+        this.amount = amount;
+        this.referenceNumber = referenceNumber;
+    }
+
     public String getMsisdn() {
         return msisdn;
     }
