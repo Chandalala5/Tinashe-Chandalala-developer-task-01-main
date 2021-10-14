@@ -36,15 +36,8 @@ public class EnquiriesServiceImpl implements EnquiriesService {
         final SubscriberRequest createdSubscriberRequest = subscriberRequestDao.save(subscriberRequest);
 
         final INBalanceResponse inBalanceResponse = chargingPlatform.enquireBalance(partnerCode, msisdn);
-        LOGGER.info("check 1 :: Partner Code : {}, Msisdn : {}", inBalanceResponse.getResponseCode(), msisdn);
-
         changeSubscriberStateOnBalanceEnquiry(createdSubscriberRequest, inBalanceResponse);
-        LOGGER.info("check 2 :: Partner Code : {}, Msisdn : {}", inBalanceResponse.getResponseCode(), msisdn);
-
         subscriberRequestDao.save(createdSubscriberRequest);
-
-        LOGGER.info("check 3 :: Partner Code : {}, Msisdn : {}", inBalanceResponse.getResponseCode(), msisdn);
-
         airtimeBalanceResponse.setResponseCode(inBalanceResponse.getResponseCode());
         airtimeBalanceResponse.setNarrative(inBalanceResponse.getNarrative());
         airtimeBalanceResponse.setMsisdn(msisdn);
