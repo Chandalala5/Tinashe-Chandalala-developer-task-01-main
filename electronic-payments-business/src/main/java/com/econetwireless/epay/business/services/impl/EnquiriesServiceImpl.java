@@ -34,6 +34,7 @@ public class EnquiriesServiceImpl implements EnquiriesService {
         final AirtimeBalanceResponse airtimeBalanceResponse = new AirtimeBalanceResponse();
         final SubscriberRequest subscriberRequest = populate(partnerCode, msisdn);
         final SubscriberRequest createdSubscriberRequest = subscriberRequestDao.save(subscriberRequest);
+
         final INBalanceResponse inBalanceResponse = chargingPlatform.enquireBalance(partnerCode, msisdn);
         changeSubscriberStateOnBalanceEnquiry(createdSubscriberRequest, inBalanceResponse);
         subscriberRequestDao.save(createdSubscriberRequest);

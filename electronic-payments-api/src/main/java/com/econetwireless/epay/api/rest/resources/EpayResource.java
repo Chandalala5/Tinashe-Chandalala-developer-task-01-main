@@ -23,7 +23,6 @@ public class EpayResource {
 
     private final ReportingProcessor reportingProcessor;
 
-    @Autowired
     public EpayResource(EpayRequestProcessor epayRequestProcessor, ReportingProcessor reportingProcessor) {
         this.epayRequestProcessor = epayRequestProcessor;
         this.reportingProcessor = reportingProcessor;
@@ -48,3 +47,6 @@ public class EpayResource {
         return reportingProcessor.getPartnerTransactions(partnerCode);
     }
 }
+
+
+
