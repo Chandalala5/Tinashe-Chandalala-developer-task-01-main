@@ -34,6 +34,7 @@ public class RequestInterceptor {
         this.partnerCodeValidator = partnerCodeValidator;
     }
 
+
     @Around("execution(* com.econetwireless.epay.api.rest.resources.EpayResource.getPartnerTransactions(..)) && args(partnerCode)")
     public TransactionsResponse getPartnerTransactions(final ProceedingJoinPoint joinPoint, final String partnerCode) {
         TransactionsResponse transactionsResponse = new TransactionsResponse();
@@ -98,7 +99,7 @@ public class RequestInterceptor {
         AirtimeTopupResponse airtimeTopupResponse = new AirtimeTopupResponse();
         try {
             LOGGER.info("IN ECredit Airtime :: Partner Code : {}, Mobile Number : {}",
-                    airtimeTopupRequest.getPartnerCode(), airtimeTopupRequest.getPartnerCode());
+                    airtimeTopupRequest.getPartnerCode(), airtimeTopupRequest.getMsisdn());
             airtimeTopupResponse = checkingMissingFields(airtimeTopupRequest);
             if(StringUtils.isNotEmpty(airtimeTopupResponse.getResponseCode())) {
                 return airtimeTopupResponse;
