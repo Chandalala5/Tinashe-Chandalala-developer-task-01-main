@@ -9,6 +9,8 @@ import javax.xml.ws.Endpoint;
 /**
  * Created by tnyamakura on 17/3/2017.
  */
+
+
 public class IntelligentNetworkPublisher {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(IntelligentNetworkPublisher.class);

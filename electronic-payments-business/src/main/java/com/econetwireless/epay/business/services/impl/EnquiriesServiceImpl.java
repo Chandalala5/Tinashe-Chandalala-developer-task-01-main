@@ -46,7 +46,7 @@ public class EnquiriesServiceImpl implements EnquiriesService {
         return airtimeBalanceResponse;
     }
 
-    private static void changeSubscriberStateOnBalanceEnquiry(final SubscriberRequest subscriberRequest, final INBalanceResponse inBalanceResponse) {
+    public static void changeSubscriberStateOnBalanceEnquiry(final SubscriberRequest subscriberRequest, final INBalanceResponse inBalanceResponse) {
         final boolean isSuccessfulResponse = ResponseCode.SUCCESS.getCode().equalsIgnoreCase(inBalanceResponse.getResponseCode());
         if(!isSuccessfulResponse) {
             subscriberRequest.setStatus(SystemConstants.STATUS_FAILED);
@@ -56,7 +56,7 @@ public class EnquiriesServiceImpl implements EnquiriesService {
             subscriberRequest.setBalanceBefore(inBalanceResponse.getAmount());
         }
     }
-    private static SubscriberRequest populate(final String partnerCode, final String msisdn) {
+    public static SubscriberRequest populate(final String partnerCode, final String msisdn) {
         final SubscriberRequest subscriberRequest = new SubscriberRequest();
         subscriberRequest.setRequestType(SystemConstants.REQUEST_TYPE_AIRTIME_BALANCE_ENQUIRY);
         subscriberRequest.setPartnerCode(partnerCode);

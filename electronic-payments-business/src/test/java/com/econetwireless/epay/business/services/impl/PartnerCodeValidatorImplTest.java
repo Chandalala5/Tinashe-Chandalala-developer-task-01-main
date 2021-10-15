@@ -6,6 +6,7 @@ import com.econetwireless.epay.dao.requestpartner.api.RequestPartnerDao;
 import org.junit.jupiter.api.Test;
 
 class PartnerCodeValidatorImplTest {
+
     @Test
     void testConstructor() {
         // TODO: This test is incomplete.
@@ -27,5 +28,7 @@ class PartnerCodeValidatorImplTest {
 
         new PartnerCodeValidatorImpl(mock(RequestPartnerDao.class));
     }
+
+
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="com.econetwireless.epay.business.utils.MessageConvertersTest" time="4.299" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="com.econetwireless.epay.business.utils.MessageConvertersTest" time="4.961" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11+28"/>
@@ -65,10 +65,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert1" time="0.324"/>
-  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert2" time="0.017"/>
-  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert3" time="0.016"/>
-  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert4" time="0.047"/>
-  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert5" time="0.014"/>
-  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert" time="0.019"/>
+  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert1" time="0.362"/>
+  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert2" time="0.026"/>
+  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert3" time="0.021"/>
+  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert4" time="0.05"/>
+  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert5" time="0.013"/>
+  <testcase classname="com.econetwireless.epay.business.utils.MessageConvertersTest" name="testConvert" time="0.02"/>
 </testsuite>

@@ -50,7 +50,7 @@ public class CreditsServiceImpl implements CreditsService{
         return airtimeTopupResponse;
     }
 
-    private static void changeSubscriberRequestStatusOnCredit(final SubscriberRequest subscriberRequest, final INCreditResponse inCreditResponse) {
+    public static void changeSubscriberRequestStatusOnCredit(final SubscriberRequest subscriberRequest, final INCreditResponse inCreditResponse) {
         final boolean isSuccessfulResponse = ResponseCode.SUCCESS.getCode().equalsIgnoreCase(inCreditResponse.getResponseCode());
         if(!isSuccessfulResponse) {
             subscriberRequest.setStatus(SystemConstants.STATUS_FAILED);
@@ -60,7 +60,7 @@ public class CreditsServiceImpl implements CreditsService{
             subscriberRequest.setBalanceBefore(inCreditResponse.getBalance() - subscriberRequest.getAmount());
         }
     }
-    private static SubscriberRequest populateSubscriberRequest(final AirtimeTopupRequest airtimeTopupRequest) {
+    public static SubscriberRequest populateSubscriberRequest(final AirtimeTopupRequest airtimeTopupRequest) {
         final SubscriberRequest subscriberRequest = new SubscriberRequest();
         subscriberRequest.setRequestType(SystemConstants.REQUEST_TYPE_AIRTIME_TOPUP);
         subscriberRequest.setPartnerCode(airtimeTopupRequest.getPartnerCode());
@@ -69,7 +69,7 @@ public class CreditsServiceImpl implements CreditsService{
         subscriberRequest.setAmount(airtimeTopupRequest.getAmount());
         return subscriberRequest;
     }
-    private static INCreditRequest populate(final AirtimeTopupRequest airtimeTopupRequest) {
+    public static INCreditRequest populate(final AirtimeTopupRequest airtimeTopupRequest) {
         final INCreditRequest inCreditRequest = new INCreditRequest();
         inCreditRequest.setAmount(airtimeTopupRequest.getAmount());
         inCreditRequest.setMsisdn(airtimeTopupRequest.getMsisdn());
