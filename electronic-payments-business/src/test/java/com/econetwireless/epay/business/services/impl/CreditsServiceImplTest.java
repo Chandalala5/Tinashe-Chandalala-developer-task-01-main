@@ -1,10 +1,7 @@
 package com.econetwireless.epay.business.services.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
-
-import com.econetwireless.epay.business.integrations.impl.ChargingPlatformImpl;
-import com.econetwireless.epay.dao.subscriberrequest.api.SubscriberRequestDao;
+import com.econetwireless.epay.business.config.RootConfig;
 import com.econetwireless.epay.domain.SubscriberRequest;
 import com.econetwireless.utils.messages.AirtimeTopupRequest;
 import com.econetwireless.utils.pojo.INCreditRequest;
@@ -16,60 +13,18 @@ import java.time.ZoneId;
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.ContextHierarchy;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
-class CreditsServiceImplTest {
-    @Test
-    void testConstructor() {
-        // TODO: This test is incomplete.
-        //   Reason: R002 Missing observers.
-        //   Diffblue Cover was unable to create an assertion.
-        //   Add getters for the following fields or make them package-private:
-        //     CreditsServiceImpl.chargingPlatform
-        //     CreditsServiceImpl.subscriberRequestDao
+public class CreditsServiceImplTest {
 
-        new CreditsServiceImpl();
-    }
 
     @Test
-    void testConstructor2() {
-        // TODO: This test is incomplete.
-        //   Reason: R002 Missing observers.
-        //   Diffblue Cover was unable to create an assertion.
-        //   Add getters for the following fields or make them package-private:
-        //     CreditsServiceImpl.chargingPlatform
-        //     CreditsServiceImpl.subscriberRequestDao
-
-        new CreditsServiceImpl(new ChargingPlatformImpl(null), mock(SubscriberRequestDao.class));
-
-    }
-
-    @Test
-    void testConstructor3() {
-        // TODO: This test is incomplete.
-        //   Reason: R002 Missing observers.
-        //   Diffblue Cover was unable to create an assertion.
-        //   Add getters for the following fields or make them package-private:
-        //     CreditsServiceImpl.chargingPlatform
-        //     CreditsServiceImpl.subscriberRequestDao
-
-        new CreditsServiceImpl();
-    }
-
-    @Test
-    void testConstructor4() {
-        // TODO: This test is incomplete.
-        //   Reason: R002 Missing observers.
-        //   Diffblue Cover was unable to create an assertion.
-        //   Add getters for the following fields or make them package-private:
-        //     CreditsServiceImpl.chargingPlatform
-        //     CreditsServiceImpl.subscriberRequestDao
-
-        new CreditsServiceImpl(new ChargingPlatformImpl(null), mock(SubscriberRequestDao.class));
-
-    }
-
-    @Test
-    void testChangeSubscriberRequestStatusOnCredit() {
+    public void testChangeSubscriberRequestStatusOnCredit() {
         SubscriberRequest subscriberRequest = new SubscriberRequest();
         LocalDateTime atStartOfDayResult = LocalDate.of(1970, 1, 1).atStartOfDay();
         subscriberRequest.setDateLastUpdated(Date.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
@@ -96,7 +51,7 @@ class CreditsServiceImplTest {
     }
 
     @Test
-    void testPopulateSubscriberRequest() {
+    public void testPopulateSubscriberRequest() {
         AirtimeTopupRequest airtimeTopupRequest = new AirtimeTopupRequest();
         airtimeTopupRequest.setMsisdn("Msisdn");
         airtimeTopupRequest.setAmount(10.0);
@@ -112,7 +67,7 @@ class CreditsServiceImplTest {
     }
 
     @Test
-    void testPopulate() {
+    public void testPopulate() {
         AirtimeTopupRequest airtimeTopupRequest = new AirtimeTopupRequest();
         airtimeTopupRequest.setMsisdn("Msisdn");
         airtimeTopupRequest.setAmount(10.0);
