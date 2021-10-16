@@ -7,5 +7,4 @@ com\econetwireless\epay\api\processors\api\EpayRequestProcessor.class
 com\econetwireless\epay\api\config\EpayApiWebConfig.class
 com\econetwireless\epay\api\processors\impl\EpayRequestProcessorImpl.class
 com\econetwireless\epay\api\processors\api\ReportingProcessor.class
-com\econetwireless\epay\api\jetty.class
 com\econetwireless\epay\api\processors\impl\ReportingProcessorImpl.class

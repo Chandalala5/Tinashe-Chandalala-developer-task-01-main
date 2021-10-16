@@ -15,16 +15,22 @@ import javax.sql.DataSource;
  */
 @Configuration
 @PropertySource("classpath:epay-jdbc.properties")
-public class DataSourceConfiguration {
+public class DataSourceConfiguration extends EmbeddedDatabaseBuilder {
 
     @Resource
     private Environment env;
 
     @Bean
     public DataSource dataSource() {
-        final EmbeddedDatabaseBuilder databaseBuilder = new EmbeddedDatabaseBuilder();
+
+    /*    final EmbeddedDatabaseBuilder databaseBuilder = new EmbeddedDatabaseBuilder();
         databaseBuilder.setName(env.getRequiredProperty("epay.jdbc.dbname"));
         databaseBuilder.setType(EmbeddedDatabaseType.HSQL);
-        return databaseBuilder.build();
+        return databaseBuilder.build();*/
+
+
+       return setDataSourceFactory(new EcoDataSourceFactory()).build();
     }
+
+
 }
