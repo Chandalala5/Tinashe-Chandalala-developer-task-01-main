@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.embedded.DataSourceFactory;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
 import javax.annotation.Resource;
@@ -21,8 +23,10 @@ public class EntityManagerConfiguration {
     @Resource
     private Environment environment;
 
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(final DataSource dataSource) {
+
         final LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource);
         factoryBean.setPackagesToScan("com.econetwireless.epay.domain");
